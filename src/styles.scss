@@ -1,0 +1,172 @@
+$textCenter: center;
+$heightRows: 50px;
+$color: #579BFC;
+
+
+.headerRows {
+    height: $heightRows;
+}
+
+.toDoWidth {
+    line-height: 1.5;
+    width: 600px;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.borderRadiusHeader {
+    height: 49px;
+    background: #F5F6F8;
+    padding: 0;
+    border: 0; 
+    margin: 0;
+    border-top: 1px solid #F5F6F8;
+}
+
+.fa-vertical-bar-heavy:after  { content: "\275A" };
+
+.radiusStatus {
+    border-radius: 12px 0 0 0;
+    line-height: 2.2;
+}
+
+.radiusDue {
+    border-radius: 0 12px 0 0;
+    line-height: 2.2;
+}
+
+.ownerWidth {
+    width: 130px;
+    font-weight: 100;
+    font-size: 20px;
+    text-align: $textCenter;
+}
+ 
+.statusWidth {
+    width: 151px;
+    font-weight: 100;
+    font-size: 20px;
+    text-align: $textCenter;
+}
+
+.lineHeight {
+    line-height: 1.7;
+}
+
+.plusFont {
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+.arrowIcon {
+    font-size: 20px;
+    width: 25px;
+    text-align: center;
+    color: white;
+    height: 25px;
+    line-height: 1;
+    background: $color;
+}
+
+.fontColor {
+  color: $color;
+}
+
+.paddingLeft {
+    padding-left: 23px;
+}
+
+.barImg {
+    height: 47px;
+    padding-left: 23px;
+    background: white;
+}
+
+.whiteBorder {
+    border: 1px solid white;
+}
+
+.tableContent {
+    text-align: center;
+    line-height: 2.8;
+}
+
+.addBarOpacity {
+    opacity: 0.8;
+}
+
+.ownersStyle {
+    padding: 0 45px;
+}
+
+.lineHeightOwner {
+    line-height: 1.47;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;       /* Remove default arrow */
+    text-align-last: center;
+    text-align: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
+    width: 137px;
+    height: 46px;
+ }
+
+ .statusBar {
+    width: 13px;
+    height: 46px;
+ }
+
+ .lineHeightDue {
+    line-height: 2.3;
+    padding-left: 8px;
+    width: 6px;
+    font-size: 20px;
+ }
+
+ .lineHeightImages {
+     line-height: 2.7;
+ }
+
+.widthImages {
+    line-height: 2.1;
+    padding-left: 8px;
+    width: 27px;
+    font-size: 21px;
+    color: #5D6286;
+}
+
+.paddingApr {
+    padding: 0 25px;
+}
+
+.colorWork {
+    color: #5D6286;
+}
+
+.colorDone {
+    color: #00C875;
+}
+
+.priorityClass {
+    width: 150px;
+    height: 47px;
+    line-height: 2.8;
+}
+
+.chatMessage {
+    color: #CBCDD5;
+    font-size: 31px;
+    line-height: 1.5;
+    padding-right: 7px;
+}
+
+
+//  tbody>tr>:nth-child(2){
+//     color:red;
+//     width:200px;
+//     text-align:center;
+//    }
