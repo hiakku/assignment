@@ -74,15 +74,28 @@ function App() {
       <ReactTableDragColumnRow
         heads={data.heads}
         rows={data.rows}
-        onDragEnd={(newData) => {
-          setData(newData);
+    
+          onDragEnd={(type, from, to, newData) => {
+            console.log({
+              type,
+              from,
+              to,
+              newData
+            });
+            setData(newData);
         }}
       />
         <ReactTableDragColumnRow
         heads={doneData.heads}
         rows={doneData.rows}
-        onDragEnd={(newDoneData) => {
-          setdoneData(newDoneData);
+        onDragEnd={(type, from, to, newDonedata) => {
+          console.log({
+            type,
+            from,
+            to,
+            newDonedata
+          });
+          setdoneData(newDonedata);
         }}
       />
     </div>
