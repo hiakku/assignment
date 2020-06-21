@@ -14,7 +14,7 @@ const defaultDrageState = {
 };
 
 export default props => {
-  let { heads = [], rows = [], onDragEnd } = props;
+  let { heads = [], rows = [], id, onDragEnd } = props;
   let [dragState, setDragState] = useState({ ...defaultDrageState });
   const headsEl = useRef(null),
     rowsEl = useRef(null);
@@ -28,10 +28,9 @@ export default props => {
     rows = offsetIndex(dragState.row, dragState.dropIndex, rows);
   }
 
-  // console.log(JSON.stringify(dragState))
   return (
-    <div className="container">
-      <table className="table">
+    <div className="mt-5">
+      <table className="table" id={id}>
         <thead>
           <tr className="whiteBorder" ref={headsEl}>
             {heads.map((x, i) => (
@@ -149,4 +148,3 @@ function offsetIndex(from, to, arr = []) {
   }
   return arr;
 }
-

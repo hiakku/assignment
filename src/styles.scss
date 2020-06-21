@@ -23,8 +23,6 @@ $color: #579BFC;
     border-top: 1px solid #F5F6F8;
 }
 
-.fa-vertical-bar-heavy:after  { content: "\275A" };
-
 .radiusStatus {
     border-radius: 12px 0 0 0;
     line-height: 2.2;
@@ -56,6 +54,11 @@ $color: #579BFC;
 .plusFont {
     font-size: 20px;
     line-height: 1.7;
+    width: 47px;
+}
+
+.arrowThingsColor {
+    background: $color;
 }
 
 .arrowIcon {
@@ -65,7 +68,6 @@ $color: #579BFC;
     color: white;
     height: 25px;
     line-height: 1;
-    background: $color;
 }
 
 .fontColor {
@@ -158,15 +160,54 @@ select {
 }
 
 .chatMessage {
-    color: #CBCDD5;
+    color: #d5dbe1;
     font-size: 31px;
     line-height: 1.5;
-    padding-right: 7px;
+    width: 53px;
+
 }
 
+.firstOwner {
+    border: 1px solid #A5D0F0;
+    background: #E6F4FF;
+    height: 46px;
+}
 
-//  tbody>tr>:nth-child(2){
-//     color:red;
-//     width:200px;
-//     text-align:center;
-//    }
+.ownerColor {
+    color: #C6C7CE;
+}
+
+.bar2Style {
+    height: 47px;
+    width: 10px;
+}
+
+.lastRowStyle {
+    width: 131px;
+    height: 47px;
+}
+
+.lastRowStatus {
+    width: 151px;
+    height: 47px;
+}
+
+.widthLast {
+    width: 600px;
+    height: 47px;
+}
+
+.progressBar {
+    height: 47px;
+    border-radius: 0;
+    padding: 9px;
+}
+
+.doneColor {
+    color: #01C975;
+}
+
+.doneArrow {
+    background: #01C975;
+}
+
