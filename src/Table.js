@@ -14,10 +14,12 @@ const defaultDrageState = {
 };
 
 export default props => {
-  let { heads = [], rows = [], id, onDragEnd } = props;
+  let { heads = [], rows = [], onDragEnd } = props;
   let [dragState, setDragState] = useState({ ...defaultDrageState });
   const headsEl = useRef(null),
-    rowsEl = useRef(null);
+    rowsEl = useRef(null),
+    preview = useRef(null);
+
 
   if (dragState.direction === DRAG_DIRECTION_COLUMN) {
     heads = offsetIndex(dragState.column, dragState.dropIndex, heads);
@@ -30,7 +32,7 @@ export default props => {
 
   return (
     <div className="mt-5">
-      <table className="table" id={id}>
+      <table className="table">
         <thead>
           <tr className="whiteBorder" ref={headsEl}>
             {heads.map((x, i) => (
@@ -59,6 +61,7 @@ export default props => {
                   }} 
                   draggable="true"
                   onDragStart={e => {
+                    e.dataTransfer.setDragImage(preview.current, 0, 0);
                     setDragState({
                       ...dragState,
                       row: i,
@@ -129,6 +132,15 @@ export default props => {
           ))}
         </tbody>
       </table>
+      <div
+        ref={preview}
+        style={{
+          position: "absolute",
+          width: 0,
+          height: 0,
+          overflow: "hidden"
+        }}
+      />
     </div>
   );
 };
