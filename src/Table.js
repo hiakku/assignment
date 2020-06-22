@@ -1,37 +1,26 @@
 import { useState, useRef } from "react";
 import React from "react";
-
-const DRAG_DIRECTION_NONE = "";
-const DRAG_DIRECTION_ROW = "row";
-const DRAG_DIRECTION_COLUMN = "column";
-
-const defaultDrageState = {
-  column: -1,
-  row: -1,
-  startPoint: null,
-  direction: DRAG_DIRECTION_NONE, 
-  dropIndex: -1
-};
+import {DRAGDIRECTIONROW, DRAGDIRECTIONCOLUMN, DEFAULTDRAGSTATE} from './AllConstant';
 
 export default props => {
   let { heads = [], rows = [], onDragEnd } = props;
-  let [dragState, setDragState] = useState({ ...defaultDrageState });
+  let [dragState, setDragState] = useState({ ...DEFAULTDRAGSTATE });
   const headsEl = useRef(null),
     rowsEl = useRef(null),
     preview = useRef(null);
 
 
-  if (dragState.direction === DRAG_DIRECTION_COLUMN) {
+  if (dragState.direction === DRAGDIRECTIONCOLUMN) {
     heads = offsetIndex(dragState.column, dragState.dropIndex, heads);
     rows = rows.map(x => offsetIndex(dragState.column, dragState.dropIndex, x));
   }
 
-  if (dragState.direction === DRAG_DIRECTION_ROW) {
+  if (dragState.direction === DRAGDIRECTIONROW) {
     rows = offsetIndex(dragState.row, dragState.dropIndex, rows);
   }
 
   return (
-    <div className="mt-5">
+    <div>
       <table className="table">
         <thead>
           <tr className="whiteBorder" ref={headsEl}>
@@ -49,11 +38,11 @@ export default props => {
                   style={{
                     cursor: dragState.direction ? "move" : "grab",
                     background:
-                      dragState.direction === DRAG_DIRECTION_COLUMN
+                      dragState.direction === DRAGDIRECTIONCOLUMN
                         ? dragState.dropIndex === j
                           ? 'lightgreen'
                           : '#F5F6F8'
-                        : dragState.direction === DRAG_DIRECTION_ROW
+                        : dragState.direction === DRAGDIRECTIONROW
                         ? dragState.dropIndex === i
                           ? 'lightgreen'
                           : '#F5F6F8'
@@ -77,7 +66,7 @@ export default props => {
                       if (dragState.column !== j) {
                         setDragState({
                           ...dragState,
-                          direction: DRAG_DIRECTION_COLUMN,
+                          direction: DRAGDIRECTIONCOLUMN,
                           dropIndex: j
                         });
                         return;
@@ -85,7 +74,7 @@ export default props => {
                       if (dragState.row !== i) {
                         setDragState({
                           ...dragState,
-                          direction: DRAG_DIRECTION_ROW,
+                          direction: DRAGDIRECTIONROW,
                           dropIndex: i
                         });
                         return;
@@ -93,7 +82,7 @@ export default props => {
                       return;
                     }
 
-                    if (dragState.direction === DRAG_DIRECTION_COLUMN) {
+                    if (dragState.direction === DRAGDIRECTIONCOLUMN) {
                       if (j !== dragState.dropIndex) {
                         setDragState({
                           ...dragState,
@@ -102,7 +91,7 @@ export default props => {
                       }
                       return;
                     }
-                    if (dragState.direction === DRAG_DIRECTION_ROW) {
+                    if (dragState.direction === DRAGDIRECTIONROW) {
                       if (i !== dragState.dropIndex) {
                         setDragState({
                           ...dragState,
@@ -115,13 +104,13 @@ export default props => {
                   onDragEnd={() => {
                     onDragEnd(
                       dragState.direction,
-                      dragState.direction === DRAG_DIRECTION_COLUMN
+                      dragState.direction === DRAGDIRECTIONCOLUMN
                         ? dragState.column
                         : dragState.row,
                       dragState.dropIndex,
                       { heads, rows }
                     );
-                    setDragState({ ...defaultDrageState });
+                    setDragState({ ...DEFAULTDRAGSTATE });
                   }}
                   
                 >

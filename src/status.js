@@ -14,7 +14,7 @@ export default class FlavorForm extends React.Component {
     render() {
       return (
             <React.Fragment>
-            <select value={this.state.value} onChange={this.handleChange} className="float-left border-0 text-white" style={{background: this.state.value }}>
+            <select value={this.state.value} onChange={this.handleChange} className="float-left border-0 text-white selectStatus text-center" style={{background: this.state.value }}>
               <option value="#FDAB3D" style={{background: "#FDAB3D"}}>Working on it</option>
               <option value="#579BFC" style={{background: "#579BFC"}}>Waiting for review</option>
               <option value="#E2445B" style={{background: "#E2445B"}}>Stuck</option>
