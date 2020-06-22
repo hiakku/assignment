@@ -1,50 +1,59 @@
-$textCenter: center;
 $heightRows: 50px;
-$color: #579BFC;
-
+$color1: #579BFC;
+$lineHeight1: 1.5;
+$color2: #01C975;
+$width1: 600px;
+$color3: #F5F6F8;
+$color4: #5D6286;
+$lineHeight2: 2.2;
+$fontSize1: 20px;
+$height2: 46px;
 
 .headerRows {
     height: $heightRows;
 }
 
+.fontWeight {
+    font-weight: 100;
+}
+
+.whiteBorder {
+    border: 1px solid white;
+}
+
 .toDoWidth {
-    line-height: 1.5;
-    width: 600px;
+    line-height: $lineHeight1;
+    width: $width1;
     font-size: 25px;
-    font-weight: 300;
 }
 
 .borderRadiusHeader {
-    height: 49px;
-    background: #F5F6F8;
-    padding: 0;
-    border: 0; 
-    margin: 0;
-    border-top: 1px solid #F5F6F8;
+    height: 52px;
+    background: $color3;
+    border-top: 1px solid $color3;
 }
 
 .radiusStatus {
     border-radius: 12px 0 0 0;
-    line-height: 2.2;
+    line-height: $lineHeight2;
 }
 
 .radiusDue {
     border-radius: 0 12px 0 0;
-    line-height: 2.2;
+    line-height: $lineHeight2;
 }
 
 .ownerWidth {
     width: 130px;
-    font-weight: 100;
-    font-size: 20px;
-    text-align: $textCenter;
+    font-size: $fontSize1;
+}
+
+.lastRowStatus {
+    width: 228px;
 }
  
 .statusWidth {
-    width: 151px;
-    font-weight: 100;
-    font-size: 20px;
-    text-align: $textCenter;
+    font-size: $fontSize1;
 }
 
 .lineHeight {
@@ -52,45 +61,35 @@ $color: #579BFC;
 }
 
 .plusFont {
-    font-size: 20px;
-    line-height: 1.7;
+    font-size: $fontSize1;
     width: 47px;
 }
 
 .arrowThingsColor {
-    background: $color;
+    background: $color1;
 }
 
 .arrowIcon {
-    font-size: 20px;
+    font-size: $fontSize1;
     width: 25px;
-    text-align: center;
-    color: white;
     height: 25px;
     line-height: 1;
 }
 
 .fontColor {
-  color: $color;
+  color: $color1;
 }
 
 .paddingLeft {
     padding-left: 23px;
 }
 
-.barImg {
+.paddingLeft2 {
+    padding-left: 8px;
+}
+
+.height1 {
     height: 47px;
-    padding-left: 23px;
-    background: white;
-}
-
-.whiteBorder {
-    border: 1px solid white;
-}
-
-.tableContent {
-    text-align: center;
-    line-height: 2.8;
 }
 
 .addBarOpacity {
@@ -108,25 +107,23 @@ $color: #579BFC;
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;       /* Remove default arrow */
+    appearance: none;   
     text-align-last: center;
-    text-align: center;
     -ms-text-align-last: center;
     -moz-text-align-last: center;
-    width: 137px;
-    height: 46px;
+    width: 214px;
+    height: $height2;
  }
 
  .statusBar {
     width: 13px;
-    height: 46px;
+    height: $height2;
  }
 
  .lineHeightDue {
     line-height: 2.3;
-    padding-left: 8px;
-    width: 6px;
-    font-size: 20px;
+    width: 43px;
+    font-size: $fontSize1;
  }
 
  .lineHeightImages {
@@ -135,18 +132,16 @@ select {
 
 .widthImages {
     line-height: 2.1;
-    padding-left: 8px;
     width: 27px;
     font-size: 21px;
-    color: #5D6286;
 }
 
 .paddingApr {
-    padding: 0 25px;
+    padding: 0 62px;
 }
 
 .colorWork {
-    color: #5D6286;
+    color: $color4;
 }
 
 .colorDone {
@@ -154,23 +149,21 @@ select {
 }
 
 .priorityClass {
-    width: 150px;
-    height: 47px;
+    width: 100%;
     line-height: 2.8;
 }
 
 .chatMessage {
     color: #d5dbe1;
     font-size: 31px;
-    line-height: 1.5;
+    line-height: $lineHeight1;
     width: 53px;
-
 }
 
 .firstOwner {
     border: 1px solid #A5D0F0;
     background: #E6F4FF;
-    height: 46px;
+    height: $height2;
 }
 
 .ownerColor {
@@ -178,36 +171,33 @@ select {
 }
 
 .bar2Style {
-    height: 47px;
     width: 10px;
 }
 
 .lastRowStyle {
-    width: 131px;
-    height: 47px;
+    width: 132px;
 }
 
-.lastRowStatus {
-    width: 151px;
-    height: 47px;
+.height2 {
+    height: 48px;
 }
 
 .widthLast {
-    width: 600px;
-    height: 47px;
+    width: $width1;
 }
 
 .progressBar {
-    height: 47px;
-    border-radius: 0;
     padding: 9px;
 }
 
 .doneColor {
-    color: #01C975;
+    color: $color2;
 }
 
 .doneArrow {
-    background: #01C975;
+    background: $color2;
 }
 
+[contenteditable] { padding: 5px; outline: 0 solid transparent;cursor: auto;  }
+[contenteditable]:not(:focus) { border: 0 solid transparent; }
+[contenteditable]:focus { border: 1px dashed grey; cursor: auto; }
